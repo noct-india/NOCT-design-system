@@ -1,0 +1,204 @@
+/* ============================================
+   DESIGN TOKENS — synced from Figma
+   Last synced: 2026-04-30
+   Source: Test Design System (Figma)
+
+   Structure mirrors Figma variable collections:
+   1. Color - Primitives
+   2. Color - Brand
+   3. Color - General alias (semantic)
+   4. Corner Radius
+   5. Spacing
+   6. Icon stroke
+   ============================================ */
+
+:root {
+
+  /* ==========================================
+     COLOR PRIMITIVES
+     Raw values — use aliases below in components
+     ========================================== */
+
+  /* Neutral */
+  --color-neutral-50:   #0f0f0f;
+  --color-neutral-100:  #131314;
+  --color-neutral-150:  #18191b;
+  --color-neutral-200:  #242529;
+  --color-neutral-250:  #2c2e30;
+  --color-neutral-300:  #36393c;
+  --color-neutral-400:  #5a5d63;
+  --color-neutral-450:  #707379;
+  --color-neutral-500:  #9c9fa5;
+  --color-neutral-700:  #bfc2c9;
+  --color-neutral-900:  #d8dce4;
+  --color-neutral-1000: #fafafa;
+
+  /* Blue */
+  --color-blue-100:   #101624;
+  --color-blue-200:   #111c3a;
+  --color-blue-300:   #13285e;
+  --color-blue-400:   #163da1;
+  --color-blue-500:   #1a52e5;
+  --color-blue-700:   #4f92ff;
+
+  /* Green */
+  --color-green-100:  #0e1a18;
+  --color-green-200:  #142522;
+  --color-green-300:  #093a32;
+  --color-green-400:  #055e4f;
+  --color-green-500:  #00816b;
+  --color-green-600:  #009c82;
+  --color-green-700:  #00b89a;
+
+  /* Red */
+  --color-red-100:    #1f1314;
+  --color-red-200:    #2d1a1c;
+  --color-red-300:    #4b1d20;
+  --color-red-400:    #7e282f;
+  --color-red-500:    #b2343e;
+  --color-red-600:    #d33c49;
+  --color-red-700:    #ff4d50;
+
+  /* Amber */
+  --color-amber-100:  #1a1504;
+  --color-amber-200:  #27210f;
+  --color-amber-300:  #392a0f;
+  --color-amber-400:  #674509;
+  --color-amber-500:  #e99f21;
+  --color-amber-700:  #ffbb46;
+
+  /* Contrast overlays */
+  --color-contrast-minus-5:   rgba(0,0,0,0.05);
+  --color-contrast-minus-10:  rgba(0,0,0,0.10);
+  --color-contrast-minus-20:  rgba(0,0,0,0.20);
+  --color-contrast-minus-40:  rgba(0,0,0,0.40);
+  --color-contrast-minus-100: #000000;
+
+  /* ==========================================
+     COLOR — BRAND
+     ========================================== */
+
+  --color-brand-primary:   #5697fb;   /* logo-1 */
+  --color-brand-secondary: #0057b0;   /* logo-2 */
+
+  /* ==========================================
+     COLOR — SEMANTIC ALIASES
+     Use these in components, not primitives.
+     ========================================== */
+
+  /* Text */
+  --color-text-primary:   var(--color-neutral-1000);
+  --color-text-secondary: var(--color-neutral-700);
+  --color-text-tertiary:  var(--color-neutral-500);
+  --color-text-disabled:  var(--color-neutral-400);
+  --color-text-inverted:  var(--color-neutral-50);
+  --color-text-blue:      var(--color-blue-700);
+  --color-text-green:     var(--color-green-700);
+  --color-text-red:       var(--color-red-700);
+  --color-text-amber:     var(--color-amber-700);
+
+  /* Fill */
+  --color-fill-page:         var(--color-neutral-100);
+  --color-fill-card:         var(--color-neutral-200);
+  --color-fill-card-subtle:  var(--color-neutral-150);
+  --color-fill-card-medium:  var(--color-neutral-250);
+  --color-fill-card-strong:  var(--color-neutral-300);
+  --color-fill-pill-blue:    var(--color-blue-200);
+  --color-fill-pill-green:   var(--color-green-200);
+  --color-fill-pill-red:     var(--color-red-200);
+  --color-fill-pill-amber:   var(--color-amber-200);
+  --color-fill-pill-neutral: var(--color-neutral-200);
+  --color-fill-btn-blue:     var(--color-blue-500);
+  --color-fill-btn-green:    var(--color-green-500);
+  --color-fill-btn-red:      var(--color-red-500);
+
+  /* Stroke */
+  --color-stroke-subtle:  var(--color-neutral-200);
+  --color-stroke-normal:  var(--color-neutral-250);
+  --color-stroke-medium:  var(--color-neutral-300);
+  --color-stroke-strong:  var(--color-neutral-400);
+  --color-stroke-blue:    var(--color-blue-500);
+  --color-stroke-green:   var(--color-green-500);
+  --color-stroke-red:     var(--color-red-500);
+  --color-stroke-amber:   var(--color-amber-500);
+
+  /* Icon */
+  --color-icon-neutral:   var(--color-neutral-700);
+  --color-icon-secondary: var(--color-neutral-500);
+  --color-icon-disabled:  var(--color-neutral-400);
+  --color-icon-blue:      var(--color-blue-700);
+  --color-icon-green:     var(--color-green-700);
+  --color-icon-red:       var(--color-red-700);
+  --color-icon-amber:     var(--color-amber-700);
+
+  /* ==========================================
+     CORNER RADIUS
+     ========================================== */
+
+  --radius-xs:    2px;
+  --radius-s:     4px;
+  --radius-m:     8px;
+  --radius-l:     12px;
+  --radius-xl:    16px;
+  --radius-round: 9999px;
+
+  /* ==========================================
+     SPACING
+     ========================================== */
+
+  --space-2:   2px;
+  --space-4:   4px;
+  --space-6:   6px;
+  --space-8:   8px;
+  --space-10:  10px;
+  --space-12:  12px;
+  --space-14:  14px;
+  --space-16:  16px;
+  --space-18:  18px;
+  --space-20:  20px;
+  --space-24:  24px;
+  --space-28:  28px;
+  --space-32:  32px;
+  --space-40:  40px;
+  --space-48:  48px;
+  --space-56:  56px;
+  --space-64:  64px;
+  --space-72:  72px;
+  --space-96:  96px;
+
+  /* ==========================================
+     ICON STROKE
+     ========================================== */
+
+  --icon-stroke-width: 1.333px;
+
+  /* ==========================================
+     TYPOGRAPHY
+     (Add to Figma variables to sync these too)
+     ========================================== */
+
+  --font-family-base:     'Inter', sans-serif;
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+  --line-height-tight:    1.2;
+  --line-height-base:     1.5;
+
+  /* ==========================================
+     SHADOWS
+     ========================================== */
+
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --shadow-sm:    0 2px 8px var(--shadow-color);
+  --shadow-md:    0 14px 30px var(--shadow-color);
+
+  /* ==========================================
+     TRANSITIONS
+     ========================================== */
+
+  --transition-fast: 100ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+
+}

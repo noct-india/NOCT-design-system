@@ -1,0 +1,84 @@
+/* Button — uses tokens from your Figma design system */
+
+.btn {
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  font-family:     var(--font-family-base);
+  font-weight:     var(--font-weight-semibold);
+  line-height:     var(--line-height-tight);
+  border:          1.333px solid transparent;
+  cursor:          pointer;
+  transition:      background var(--transition-base),
+                   color var(--transition-base),
+                   border-color var(--transition-base);
+  white-space:     nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor:  not-allowed;
+}
+
+/* --- SIZES --- */
+
+.btn--sm {
+  font-size:     12px;
+  padding:       var(--space-6) var(--space-12);
+  border-radius: var(--radius-s);
+}
+
+.btn--md {
+  font-size:     14px;
+  padding:       var(--space-8) var(--space-16);
+  border-radius: var(--radius-m);
+}
+
+.btn--lg {
+  font-size:     16px;
+  padding:       var(--space-12) var(--space-24);
+  border-radius: var(--radius-m);
+}
+
+/* --- VARIANTS --- */
+
+.btn--primary {
+  background: var(--color-fill-btn-blue);
+  color:      var(--color-neutral-1000);
+}
+.btn--primary:hover:not(:disabled) {
+  background: var(--color-blue-400);
+}
+
+.btn--secondary {
+  background:   transparent;
+  color:        var(--color-text-blue);
+  border-color: var(--color-stroke-blue);
+}
+.btn--secondary:hover:not(:disabled) {
+  background: var(--color-blue-200);
+}
+
+.btn--ghost {
+  background: transparent;
+  color:      var(--color-text-secondary);
+}
+.btn--ghost:hover:not(:disabled) {
+  background: var(--color-fill-card);
+}
+
+.btn--danger {
+  background: var(--color-fill-btn-red);
+  color:      var(--color-neutral-1000);
+}
+.btn--danger:hover:not(:disabled) {
+  background: var(--color-red-600);
+}
+
+.btn--success {
+  background: var(--color-fill-btn-green);
+  color:      var(--color-neutral-1000);
+}
+.btn--success:hover:not(:disabled) {
+  background: var(--color-green-600);
+}
