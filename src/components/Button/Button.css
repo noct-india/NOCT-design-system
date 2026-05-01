@@ -1,4 +1,4 @@
-/* Button — uses tokens from your Figma design system */
+/* Button — NOCT Design System tokens */
 
 .btn {
   display:         inline-flex;
@@ -7,7 +7,7 @@
   font-family:     var(--font-family-base);
   font-weight:     var(--font-weight-semibold);
   line-height:     var(--line-height-tight);
-  border:          1.333px solid transparent;
+  border:          var(--stroke-border) solid transparent;
   cursor:          pointer;
   transition:      background var(--transition-base),
                    color var(--transition-base),
@@ -23,62 +23,78 @@
 /* --- SIZES --- */
 
 .btn--sm {
-  font-size:     12px;
-  padding:       var(--space-6) var(--space-12);
-  border-radius: var(--radius-s);
+  font-size:     var(--font-size-01);
+  padding:       var(--space-150) var(--space-300);
+  border-radius: var(--radius-100);
 }
 
 .btn--md {
-  font-size:     14px;
-  padding:       var(--space-8) var(--space-16);
-  border-radius: var(--radius-m);
+  font-size:     var(--font-size-02);
+  padding:       var(--space-200) var(--space-400);
+  border-radius: var(--radius-200);
 }
 
 .btn--lg {
-  font-size:     16px;
-  padding:       var(--space-12) var(--space-24);
-  border-radius: var(--radius-m);
+  font-size:     var(--font-size-03);
+  padding:       var(--space-300) var(--space-600);
+  border-radius: var(--radius-200);
 }
 
 /* --- VARIANTS --- */
 
+/* Primary — brand fill */
 .btn--primary {
-  background: var(--color-fill-btn-blue);
-  color:      var(--color-neutral-1000);
+  background: var(--color-bg-brand);
+  color:      var(--color-text-on-brand);
 }
 .btn--primary:hover:not(:disabled) {
-  background: var(--color-blue-400);
+  background: var(--color-bg-brand-secondary);
 }
 
+/* Secondary — brand outline */
 .btn--secondary {
   background:   transparent;
-  color:        var(--color-text-blue);
-  border-color: var(--color-stroke-blue);
+  color:        var(--color-text-brand);
+  border-color: var(--color-border-brand);
 }
 .btn--secondary:hover:not(:disabled) {
-  background: var(--color-blue-200);
+  background: var(--color-bg-brand-tertiary);
+  color:      var(--color-text-on-brand);
 }
 
+/* Ghost */
 .btn--ghost {
   background: transparent;
   color:      var(--color-text-secondary);
 }
 .btn--ghost:hover:not(:disabled) {
-  background: var(--color-fill-card);
+  background: var(--color-bg-secondary);
 }
 
+/* Danger */
 .btn--danger {
-  background: var(--color-fill-btn-red);
-  color:      var(--color-neutral-1000);
+  background: var(--color-bg-danger);
+  color:      var(--color-text-on-danger);
 }
 .btn--danger:hover:not(:disabled) {
   background: var(--color-red-600);
 }
 
+/* Positive / Success */
 .btn--success {
-  background: var(--color-fill-btn-green);
-  color:      var(--color-neutral-1000);
+  background: var(--color-bg-positive);
+  color:      var(--color-text-on-positive);
 }
 .btn--success:hover:not(:disabled) {
   background: var(--color-green-600);
+}
+
+/* Warning */
+.btn--warning {
+  background: var(--color-bg-warning);
+  color:      var(--color-text-on-warning);
+}
+.btn--warning:hover:not(:disabled) {
+  background: var(--color-yellow-600);
+  color:      var(--color-white-1000);
 }

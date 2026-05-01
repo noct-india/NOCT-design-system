@@ -7,7 +7,7 @@ export default {
   argTypes: {
     variant: {
       control: { type: "select" },
-      options: ["primary", "secondary", "ghost", "danger", "success"],
+      options: ["primary", "secondary", "ghost", "danger", "success", "warning"],
     },
     size: {
       control: { type: "select" },
@@ -23,6 +23,7 @@ export const Secondary = { args: { variant: "secondary", size: "md", label: "Sec
 export const Ghost     = { args: { variant: "ghost",     size: "md", label: "Ghost Button" } };
 export const Danger    = { args: { variant: "danger",    size: "md", label: "Delete" } };
 export const Success   = { args: { variant: "success",   size: "md", label: "Confirm" } };
+export const Warning   = { args: { variant: "warning",   size: "md", label: "Caution" } };
 export const Small     = { args: { variant: "primary",   size: "sm", label: "Small" } };
 export const Large     = { args: { variant: "primary",   size: "lg", label: "Large Button" } };
 export const Disabled  = { args: { variant: "primary",   size: "md", label: "Disabled", disabled: true } };

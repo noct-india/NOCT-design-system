@@ -1,0 +1,62 @@
+.tag {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             var(--space-100);
+  padding:         var(--space-100) var(--space-300);
+  font-family:     var(--font-family-base);
+  font-size:       var(--font-size-01);
+  font-weight:     var(--font-weight-medium);
+  border-radius:   var(--radius-full);
+  border:          var(--stroke-border) solid transparent;
+  white-space:     nowrap;
+  line-height:     var(--line-height-tight);
+  user-select:     none;
+}
+
+.tag--clickable { cursor: pointer; }
+
+/* --- SCHEME × VARIANT --- */
+
+/* Brand */
+.tag--brand.tag--primary   { background: var(--color-bg-brand);              color: var(--color-text-on-brand);    }
+.tag--brand.tag--secondary { background: var(--color-bg-brand-tertiary);      color: var(--color-text-brand);       border-color: var(--color-border-brand); }
+
+/* Danger */
+.tag--danger.tag--primary   { background: var(--color-bg-danger);             color: var(--color-text-on-danger);   }
+.tag--danger.tag--secondary { background: var(--color-bg-danger-tertiary);    color: var(--color-text-danger);      border-color: var(--color-border-danger); }
+
+/* Positive */
+.tag--positive.tag--primary   { background: var(--color-bg-positive);          color: var(--color-text-on-positive); }
+.tag--positive.tag--secondary { background: var(--color-bg-positive-tertiary); color: var(--color-text-positive);    border-color: var(--color-border-positive); }
+
+/* Warning */
+.tag--warning.tag--primary   { background: var(--color-bg-warning);            color: var(--color-text-on-warning);  }
+.tag--warning.tag--secondary { background: var(--color-bg-warning-tertiary);   color: var(--color-text-warning);     border-color: var(--color-border-warning); }
+
+/* Neutral */
+.tag--neutral.tag--primary   { background: var(--color-bg-neutral);            color: var(--color-white-1000);       }
+.tag--neutral.tag--secondary { background: var(--color-bg-neutral-tertiary);   color: var(--color-text-default);     border-color: var(--color-border-default); }
+
+/* --- TOGGLE --- */
+.tag--toggle {
+  cursor:  pointer;
+  border:  var(--stroke-border) solid var(--color-border-default);
+}
+.tag--toggle-on  { background: var(--color-bg-brand); color: var(--color-text-on-brand); border-color: var(--color-border-brand); }
+.tag--toggle-off { background: transparent;           color: var(--color-text-secondary); }
+
+/* --- REMOVE BUTTON --- */
+.tag__remove {
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  background:      none;
+  border:          none;
+  cursor:          pointer;
+  padding:         0;
+  font-size:       10px;
+  color:           inherit;
+  opacity:         0.7;
+  line-height:     1;
+}
+.tag__remove:hover { opacity: 1; }

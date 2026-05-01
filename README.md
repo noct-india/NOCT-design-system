@@ -1,7 +1,7 @@
 # My Design System
 
-A sample design system built with React + Storybook.
-Design tokens live in `src/tokens/tokens.css` — this is the single source of truth for colors, typography, spacing, and more.
+Built with React + Storybook, synced from the NOCT Design System in Figma.
+Design tokens live in `src/tokens/tokens.css` — the single source of truth.
 
 ## Getting Started
 
@@ -10,30 +10,24 @@ npm install
 npm run storybook
 ```
 
-Storybook will open at http://localhost:6006
+Storybook opens at http://localhost:6006
 
 ## Structure
 
 ```
 src/
 ├── tokens/
-│   └── tokens.css          ← All design tokens (colors, spacing, type)
+│   └── tokens.css              ← All design tokens (synced from Figma)
 └── components/
     └── Button/
-        ├── Button.jsx       ← Component
-        ├── Button.css       ← Styles (uses tokens)
-        └── Button.stories.jsx ← Storybook stories
+        ├── Button.jsx
+        ├── Button.css
+        └── Button.stories.jsx
 ```
 
-## Adding a New Component
+## Syncing from Figma
 
-1. Create a folder under `src/components/YourComponent/`
-2. Add `YourComponent.jsx`, `YourComponent.css`, and `YourComponent.stories.jsx`
-3. Use CSS variables from `tokens.css` for all style values
-
-## Design Token Workflow
-
-1. Make a change in Figma
-2. Ask Claude to sync it to `tokens.css`
-3. Commit + push via GitHub Desktop
-4. Storybook updates automatically
+1. Make changes in Figma
+2. Ask Claude to sync → it updates tokens.css
+3. Copy only the updated file(s) into this folder
+4. Commit + push via GitHub Desktop

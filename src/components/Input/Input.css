@@ -1,0 +1,58 @@
+.input-field {
+  display:       flex;
+  flex-direction: column;
+  gap:           var(--space-100);
+  font-family:   var(--font-family-base);
+  width:         100%;
+}
+
+.input-field__label {
+  font-size:   var(--font-size-02);
+  font-weight: var(--font-weight-medium);
+  color:       var(--color-text-default);
+}
+
+.input-field__input {
+  width:         100%;
+  font-family:   var(--font-family-base);
+  font-size:     var(--font-size-02);
+  color:         var(--color-text-default);
+  background:    var(--color-bg-default);
+  border:        var(--stroke-border) solid var(--color-border-default);
+  border-radius: var(--radius-200);
+  outline:       none;
+  transition:    border-color var(--transition-fast), box-shadow var(--transition-fast);
+  box-sizing:    border-box;
+}
+
+.input-field__input::placeholder { color: var(--color-text-tertiary); }
+
+.input-field__input:hover:not(:disabled) { border-color: var(--color-border-secondary); }
+
+.input-field__input:focus {
+  border-color: var(--color-border-brand);
+  box-shadow:   0 0 0 var(--stroke-focus-ring) var(--color-bg-brand-tertiary);
+}
+
+.input-field__input:disabled {
+  background: var(--color-bg-disabled);
+  color:      var(--color-text-disabled);
+  cursor:     not-allowed;
+}
+
+/* Sizes */
+.input-field--small  .input-field__input { padding: var(--space-150) var(--space-300); font-size: var(--font-size-01); }
+.input-field--medium .input-field__input { padding: var(--space-200) var(--space-400); }
+.input-field--large  .input-field__input { padding: var(--space-300) var(--space-400); font-size: var(--font-size-03); }
+
+/* Error state */
+.input-field--error .input-field__input {
+  border-color: var(--color-border-danger);
+}
+.input-field--error .input-field__input:focus {
+  box-shadow: 0 0 0 var(--stroke-focus-ring) var(--color-bg-danger-tertiary);
+}
+
+/* Helper / Error text */
+.input-field__hint       { margin: 0; font-size: var(--font-size-01); color: var(--color-text-secondary); }
+.input-field__hint--error { color: var(--color-text-danger); }

@@ -1,197 +1,298 @@
 /* ============================================
    DESIGN TOKENS — synced from Figma
-   Last synced: 2026-04-30
-   Source: Test Design System (Figma)
+   Last synced: 2026-05-01
+   Source: NOCT Design System Sample
 
-   Structure mirrors Figma variable collections:
-   1. Color - Primitives
-   2. Color - Brand
-   3. Color - General alias (semantic)
-   4. Corner Radius
-   5. Spacing
-   6. Icon stroke
+   Collections:
+   1. Color Primitives
+   2. Color (Semantic Aliases)
+   3. Typography
+   4. Size (Spacing, Radius, Stroke, Icon)
    ============================================ */
 
 :root {
 
   /* ==========================================
      COLOR PRIMITIVES
-     Raw values — use aliases below in components
+     Raw palette — use semantic tokens in components
      ========================================== */
 
-  /* Neutral */
-  --color-neutral-50:   #0f0f0f;
-  --color-neutral-100:  #131314;
-  --color-neutral-150:  #18191b;
-  --color-neutral-200:  #242529;
-  --color-neutral-250:  #2c2e30;
-  --color-neutral-300:  #36393c;
-  --color-neutral-400:  #5a5d63;
-  --color-neutral-450:  #707379;
-  --color-neutral-500:  #9c9fa5;
-  --color-neutral-700:  #bfc2c9;
-  --color-neutral-900:  #d8dce4;
-  --color-neutral-1000: #fafafa;
+  /* Slate */
+  --color-slate-100: #f3f3f3;
+  --color-slate-200: #e3e3e3;
+  --color-slate-300: #cdcdcd;
+  --color-slate-400: #b2b2b2;
+  --color-slate-500: #949494;
+  --color-slate-600: #767676;
+  --color-slate-700: #5a5a5a;
+  --color-slate-800: #434343;
+  --color-slate-900: #303030;
+  --color-slate-1000: #242424;
+
+  /* White (with opacity) */
+  --color-white-100: rgba(255,255,255,0.05);
+  --color-white-200: rgba(255,255,255,0.10);
+  --color-white-300: rgba(255,255,255,0.20);
+  --color-white-400: rgba(255,255,255,0.40);
+  --color-white-500: rgba(255,255,255,0.70);
+  --color-white-600: rgba(255,255,255,0.80);
+  --color-white-700: rgba(255,255,255,0.85);
+  --color-white-800: rgba(255,255,255,0.90);
+  --color-white-900: rgba(255,255,255,0.95);
+  --color-white-1000: #ffffff;
+
+  /* Black (with opacity) */
+  --color-black-100: rgba(12,12,13,0.05);
+  --color-black-200: rgba(12,12,13,0.10);
+  --color-black-300: rgba(12,12,13,0.20);
+  --color-black-400: rgba(12,12,13,0.40);
+  --color-black-500: rgba(12,12,13,0.70);
+  --color-black-600: rgba(12,12,13,0.80);
+  --color-black-700: rgba(12,12,13,0.85);
+  --color-black-800: rgba(12,12,13,0.90);
+  --color-black-900: rgba(12,12,13,0.95);
+  --color-black-1000: #0c0c0d;
+
+  /* Brand (Gray-based) */
+  --color-brand-100:  #f5f5f5;
+  --color-brand-200:  #e6e6e6;
+  --color-brand-300:  #d9d9d9;
+  --color-brand-400:  #b3b3b3;
+  --color-brand-500:  #757575;
+  --color-brand-600:  #444444;
+  --color-brand-700:  #383838;
+  --color-brand-800:  #2c2c2c;
+  --color-brand-900:  #1e1e1e;
+  --color-brand-1000: #111111;
+
+  /* Gray */
+  --color-gray-100:  #f5f5f5;
+  --color-gray-200:  #e6e6e6;
+  --color-gray-300:  #d9d9d9;
+  --color-gray-400:  #b3b3b3;
+  --color-gray-500:  #757575;
+  --color-gray-600:  #444444;
+  --color-gray-700:  #383838;
+  --color-gray-800:  #2c2c2c;
+  --color-gray-900:  #1e1e1e;
+  --color-gray-1000: #111111;
 
   /* Blue */
-  --color-blue-100:   #101624;
-  --color-blue-200:   #111c3a;
-  --color-blue-300:   #13285e;
-  --color-blue-400:   #163da1;
-  --color-blue-500:   #1a52e5;
-  --color-blue-700:   #4f92ff;
+  --color-blue-100:  #f1f6fd;
+  --color-blue-200:  #e1ebfa;
+  --color-blue-300:  #c0d4f5;
+  --color-blue-400:  #9ebef1;
+  --color-blue-500:  #3f81ea;
+  --color-blue-600:  #3271d7;
+  --color-blue-700:  #2a61ba;
+  --color-blue-800:  #224a8a;
+  --color-blue-900:  #183057;
+  --color-blue-1000: #15253f;
 
-  /* Green */
-  --color-green-100:  #0e1a18;
-  --color-green-200:  #142522;
-  --color-green-300:  #093a32;
-  --color-green-400:  #055e4f;
-  --color-green-500:  #00816b;
-  --color-green-600:  #009c82;
-  --color-green-700:  #00b89a;
+  /* Green (Positive) */
+  --color-green-100:  #ebffee;
+  --color-green-200:  #cff7d3;
+  --color-green-300:  #aff4c6;
+  --color-green-400:  #85e0a3;
+  --color-green-500:  #14ae5c;
+  --color-green-600:  #009951;
+  --color-green-700:  #008043;
+  --color-green-800:  #02542d;
+  --color-green-900:  #024023;
+  --color-green-1000: #062d1b;
 
-  /* Red */
-  --color-red-100:    #1f1314;
-  --color-red-200:    #2d1a1c;
-  --color-red-300:    #4b1d20;
-  --color-red-400:    #7e282f;
-  --color-red-500:    #b2343e;
-  --color-red-600:    #d33c49;
-  --color-red-700:    #ff4d50;
+  /* Red (Danger) */
+  --color-red-100:  #fee9e7;
+  --color-red-200:  #fdd3d0;
+  --color-red-300:  #fcb3ad;
+  --color-red-400:  #f4776a;
+  --color-red-500:  #ec221f;
+  --color-red-600:  #c00f0c;
+  --color-red-700:  #900b09;
+  --color-red-800:  #690807;
+  --color-red-900:  #4d0b0a;
+  --color-red-1000: #300603;
 
-  /* Amber */
-  --color-amber-100:  #1a1504;
-  --color-amber-200:  #27210f;
-  --color-amber-300:  #392a0f;
-  --color-amber-400:  #674509;
-  --color-amber-500:  #e99f21;
-  --color-amber-700:  #ffbb46;
+  /* Yellow (Warning) */
+  --color-yellow-100:  #fffbeb;
+  --color-yellow-200:  #fff1c2;
+  --color-yellow-300:  #ffe8a3;
+  --color-yellow-400:  #e8b931;
+  --color-yellow-500:  #e5a000;
+  --color-yellow-600:  #bf6a02;
+  --color-yellow-700:  #975102;
+  --color-yellow-800:  #682d03;
+  --color-yellow-900:  #522504;
+  --color-yellow-1000: #401b01;
 
-  /* Contrast overlays */
-  --color-contrast-minus-5:   rgba(0,0,0,0.05);
-  --color-contrast-minus-10:  rgba(0,0,0,0.10);
-  --color-contrast-minus-20:  rgba(0,0,0,0.20);
-  --color-contrast-minus-40:  rgba(0,0,0,0.40);
-  --color-contrast-minus-100: #000000;
-
-  /* ==========================================
-     COLOR — BRAND
-     ========================================== */
-
-  --color-brand-primary:   #5697fb;   /* logo-1 */
-  --color-brand-secondary: #0057b0;   /* logo-2 */
+  /* Pink */
+  --color-pink-100:  #fcf1fd;
+  --color-pink-200:  #fae1fa;
+  --color-pink-300:  #f5c0ef;
+  --color-pink-400:  #f19edc;
+  --color-pink-500:  #ea3fb8;
+  --color-pink-600:  #d732a8;
+  --color-pink-700:  #ba2a92;
+  --color-pink-800:  #8a226f;
+  --color-pink-900:  #57184a;
+  --color-pink-1000: #3f1536;
 
   /* ==========================================
      COLOR — SEMANTIC ALIASES
      Use these in components, not primitives.
      ========================================== */
 
+  /* Background */
+  --color-bg-default:            var(--color-white-1000);
+  --color-bg-secondary:          var(--color-slate-100);
+  --color-bg-tertiary:           var(--color-slate-200);
+  --color-bg-brand:              var(--color-brand-1000);
+  --color-bg-brand-secondary:    var(--color-brand-900);
+  --color-bg-brand-tertiary:     var(--color-brand-800);
+  --color-bg-positive:           var(--color-green-500);
+  --color-bg-positive-secondary: var(--color-green-200);
+  --color-bg-positive-tertiary:  var(--color-green-100);
+  --color-bg-warning:            var(--color-yellow-500);
+  --color-bg-warning-secondary:  var(--color-yellow-200);
+  --color-bg-warning-tertiary:   var(--color-yellow-100);
+  --color-bg-danger:             var(--color-red-500);
+  --color-bg-danger-secondary:   var(--color-red-200);
+  --color-bg-danger-tertiary:    var(--color-red-100);
+  --color-bg-disabled:           var(--color-slate-200);
+  --color-bg-neutral:            var(--color-gray-500);
+  --color-bg-neutral-secondary:  var(--color-gray-200);
+  --color-bg-neutral-tertiary:   var(--color-gray-100);
+  --color-bg-scrim:              rgba(255,255,255,0.80);
+  --color-bg-overlay:            rgba(0,0,0,0.50);
+  --color-bg-blanket:            rgba(0,0,0,0.70);
+
   /* Text */
-  --color-text-primary:   var(--color-neutral-1000);
-  --color-text-secondary: var(--color-neutral-700);
-  --color-text-tertiary:  var(--color-neutral-500);
-  --color-text-disabled:  var(--color-neutral-400);
-  --color-text-inverted:  var(--color-neutral-50);
-  --color-text-blue:      var(--color-blue-700);
-  --color-text-green:     var(--color-green-700);
-  --color-text-red:       var(--color-red-700);
-  --color-text-amber:     var(--color-amber-700);
+  --color-text-default:          var(--color-black-1000);
+  --color-text-secondary:        var(--color-slate-700);
+  --color-text-tertiary:         var(--color-slate-500);
+  --color-text-disabled:         var(--color-slate-400);
+  --color-text-on-brand:         var(--color-white-1000);
+  --color-text-on-positive:      var(--color-white-1000);
+  --color-text-on-warning:       var(--color-black-1000);
+  --color-text-on-danger:        var(--color-white-1000);
+  --color-text-brand:            var(--color-brand-1000);
+  --color-text-positive:         var(--color-green-600);
+  --color-text-warning:          var(--color-yellow-600);
+  --color-text-danger:           var(--color-red-600);
 
-  /* Fill */
-  --color-fill-page:         var(--color-neutral-100);
-  --color-fill-card:         var(--color-neutral-200);
-  --color-fill-card-subtle:  var(--color-neutral-150);
-  --color-fill-card-medium:  var(--color-neutral-250);
-  --color-fill-card-strong:  var(--color-neutral-300);
-  --color-fill-pill-blue:    var(--color-blue-200);
-  --color-fill-pill-green:   var(--color-green-200);
-  --color-fill-pill-red:     var(--color-red-200);
-  --color-fill-pill-amber:   var(--color-amber-200);
-  --color-fill-pill-neutral: var(--color-neutral-200);
-  --color-fill-btn-blue:     var(--color-blue-500);
-  --color-fill-btn-green:    var(--color-green-500);
-  --color-fill-btn-red:      var(--color-red-500);
-
-  /* Stroke */
-  --color-stroke-subtle:  var(--color-neutral-200);
-  --color-stroke-normal:  var(--color-neutral-250);
-  --color-stroke-medium:  var(--color-neutral-300);
-  --color-stroke-strong:  var(--color-neutral-400);
-  --color-stroke-blue:    var(--color-blue-500);
-  --color-stroke-green:   var(--color-green-500);
-  --color-stroke-red:     var(--color-red-500);
-  --color-stroke-amber:   var(--color-amber-500);
+  /* Border */
+  --color-border-default:        var(--color-slate-300);
+  --color-border-secondary:      var(--color-slate-200);
+  --color-border-brand:          var(--color-brand-1000);
+  --color-border-positive:       var(--color-green-500);
+  --color-border-warning:        var(--color-yellow-500);
+  --color-border-danger:         var(--color-red-500);
+  --color-border-disabled:       var(--color-slate-300);
+  --color-border-swatch:         rgba(0,0,0,0.24);
 
   /* Icon */
-  --color-icon-neutral:   var(--color-neutral-700);
-  --color-icon-secondary: var(--color-neutral-500);
-  --color-icon-disabled:  var(--color-neutral-400);
-  --color-icon-blue:      var(--color-blue-700);
-  --color-icon-green:     var(--color-green-700);
-  --color-icon-red:       var(--color-red-700);
-  --color-icon-amber:     var(--color-amber-700);
+  --color-icon-default:          var(--color-black-1000);
+  --color-icon-secondary:        var(--color-slate-700);
+  --color-icon-tertiary:         var(--color-slate-500);
+  --color-icon-disabled:         var(--color-slate-400);
+  --color-icon-on-brand:         var(--color-white-1000);
+  --color-icon-positive:         var(--color-green-600);
+  --color-icon-warning:          var(--color-yellow-600);
+  --color-icon-danger:           var(--color-red-600);
 
   /* ==========================================
-     CORNER RADIUS
+     TYPOGRAPHY
      ========================================== */
 
-  --radius-xs:    2px;
-  --radius-s:     4px;
-  --radius-m:     8px;
-  --radius-l:     12px;
-  --radius-xl:    16px;
-  --radius-round: 9999px;
+  --font-family-sans:  'Inter', sans-serif;
+  --font-family-serif: 'Noto Serif', serif;
+  --font-family-mono:  'Roboto Mono', monospace;
+
+  /* Default */
+  --font-family-base:  var(--font-family-sans);
+
+  /* Weights */
+  --font-weight-thin:       100;
+  --font-weight-extralight: 200;
+  --font-weight-light:      300;
+  --font-weight-regular:    400;
+  --font-weight-medium:     500;
+  --font-weight-semibold:   600;
+  --font-weight-bold:       700;
+  --font-weight-extrabold:  800;
+  --font-weight-black:      900;
+
+  /* Scale */
+  --font-size-01: 12px;
+  --font-size-02: 14px;
+  --font-size-03: 16px;
+  --font-size-04: 20px;
+  --font-size-05: 24px;
+  --font-size-06: 32px;
+  --font-size-07: 40px;
+  --font-size-08: 48px;
+  --font-size-09: 64px;
+  --font-size-10: 72px;
+
+  /* Roles */
+  --font-size-body:     var(--font-size-02);
+  --font-size-heading:  var(--font-size-03);
+  --font-size-subtitle: var(--font-size-04);
+  --font-size-title:    var(--font-size-06);
+  --font-size-hero:     var(--font-size-08);
+  --font-size-code:     var(--font-size-02);
+
+  --line-height-tight: 1.2;
+  --line-height-base:  1.5;
+  --line-height-loose: 1.8;
 
   /* ==========================================
      SPACING
      ========================================== */
 
-  --space-2:   2px;
-  --space-4:   4px;
-  --space-6:   6px;
-  --space-8:   8px;
-  --space-10:  10px;
-  --space-12:  12px;
-  --space-14:  14px;
-  --space-16:  16px;
-  --space-18:  18px;
-  --space-20:  20px;
-  --space-24:  24px;
-  --space-28:  28px;
-  --space-32:  32px;
-  --space-40:  40px;
-  --space-48:  48px;
-  --space-56:  56px;
-  --space-64:  64px;
-  --space-72:  72px;
-  --space-96:  96px;
+  --space-0:    0px;
+  --space-050:  2px;
+  --space-100:  4px;
+  --space-150:  6px;
+  --space-200:  8px;
+  --space-300:  12px;
+  --space-400:  16px;
+  --space-600:  24px;
+  --space-800:  32px;
+  --space-1200: 48px;
+  --space-1600: 64px;
+  --space-2400: 96px;
+  --space-4000: 160px;
 
   /* ==========================================
-     ICON STROKE
+     BORDER RADIUS
      ========================================== */
 
-  --icon-stroke-width: 1.333px;
+  --radius-100:  4px;
+  --radius-200:  8px;
+  --radius-400:  16px;
+  --radius-full: 9999px;
 
   /* ==========================================
-     TYPOGRAPHY
-     (Add to Figma variables to sync these too)
+     STROKE / BORDER WIDTH
      ========================================== */
 
-  --font-family-base:     'Inter', sans-serif;
-  --font-weight-regular:  400;
-  --font-weight-medium:   500;
-  --font-weight-semibold: 600;
-  --font-weight-bold:     700;
-  --line-height-tight:    1.2;
-  --line-height-base:     1.5;
+  --stroke-border:     1px;
+  --stroke-focus-ring: 2px;
 
   /* ==========================================
-     SHADOWS
+     ICON SIZE
      ========================================== */
 
-  --shadow-color: rgba(0, 0, 0, 0.5);
-  --shadow-sm:    0 2px 8px var(--shadow-color);
-  --shadow-md:    0 14px 30px var(--shadow-color);
+  --icon-sm: 24px;
+  --icon-md: 32px;
+  --icon-lg: 40px;
+
+  /* ==========================================
+     BLUR
+     ========================================== */
+
+  --blur-100: 4px;
 
   /* ==========================================
      TRANSITIONS
