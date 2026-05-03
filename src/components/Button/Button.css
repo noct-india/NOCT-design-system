@@ -5,8 +5,9 @@
   align-items:     center;
   justify-content: center;
   font-family:     var(--font-family-base);
-  font-weight:     var(--font-weight-semibold);
-  line-height:     var(--line-height-tight);
+  font-weight:     var(--font-weight-regular);
+  line-height:     1;
+  letter-spacing:  0;
   border:          var(--stroke-border) solid transparent;
   cursor:          pointer;
   transition:      background var(--transition-base),
@@ -23,13 +24,13 @@
 /* --- SIZES --- */
 
 .btn--sm {
-  font-size:     var(--font-size-01);
+  font-size:     var(--font-size-03);
   padding:       var(--space-150) var(--space-300);
   border-radius: var(--radius-100);
 }
 
 .btn--md {
-  font-size:     var(--font-size-02);
+  font-size:     var(--font-size-03);
   padding:       var(--space-200) var(--space-400);
   border-radius: var(--radius-200);
 }

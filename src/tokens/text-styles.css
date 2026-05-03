@@ -1,0 +1,173 @@
+/* ============================================
+   TEXT STYLES — semantic typography aliases
+   Composites of the Typography primitive tokens.
+   Mirrors the Text Styles set defined in Figma.
+
+   Two line-height groups:
+   · Single Line  (lh: 1)   — UI elements: buttons, inputs, tags, labels
+   · Multi Line   (lh: 1.5) — paragraphs, descriptions, long-form content
+   ============================================ */
+
+/* ==========================================
+   BODY — Single Line (lh: 1)
+   ========================================== */
+
+.ts-body-base {
+  font-family:     var(--font-family-base);
+  font-size:       var(--font-size-03);       /* 16px */
+  font-weight:     var(--font-weight-regular);
+  line-height:     1;
+  letter-spacing:  0;
+}
+
+.ts-body-base-strong {
+  font-family:     var(--font-family-base);
+  font-size:       var(--font-size-03);       /* 16px */
+  font-weight:     var(--font-weight-semibold);
+  line-height:     1;
+  letter-spacing:  0;
+}
+
+.ts-body-sm {
+  font-family:     var(--font-family-base);
+  font-size:       var(--font-size-02);       /* 14px */
+  font-weight:     var(--font-weight-regular);
+  line-height:     1;
+  letter-spacing:  0;
+}
+
+.ts-body-sm-strong {
+  font-family:     var(--font-family-base);
+  font-size:       var(--font-size-02);       /* 14px */
+  font-weight:     var(--font-weight-semibold);
+  line-height:     1;
+  letter-spacing:  0;
+}
+
+.ts-body-xs {
+  font-family:     var(--font-family-base);
+  font-size:       var(--font-size-01);       /* 12px */
+  font-weight:     var(--font-weight-regular);
+  line-height:     1;
+  letter-spacing:  0;
+}
+
+.ts-body-xs-strong {
+  font-family:     var(--font-family-base);
+  font-size:       var(--font-size-01);       /* 12px */
+  font-weight:     var(--font-weight-semibold);
+  line-height:     1;
+  letter-spacing:  0;
+}
+
+/* ==========================================
+   BODY — Multi Line (lh: 1.5)
+   ========================================== */
+
+.ts-body-base-multi {
+  font-family:     var(--font-family-base);
+  font-size:       var(--font-size-03);       /* 16px */
+  font-weight:     var(--font-weight-regular);
+  line-height:     var(--line-height-base);
+  letter-spacing:  0;
+}
+
+.ts-body-sm-multi {
+  font-family:     var(--font-family-base);
+  font-size:       var(--font-size-02);       /* 14px */
+  font-weight:     var(--font-weight-regular);
+  line-height:     var(--line-height-base);
+  letter-spacing:  0;
+}
+
+.ts-body-xs-multi {
+  font-family:     var(--font-family-base);
+  font-size:       var(--font-size-01);       /* 12px */
+  font-weight:     var(--font-weight-regular);
+  line-height:     var(--line-height-base);
+  letter-spacing:  0;
+}
+
+/* ==========================================
+   HEADING (lh: 1.2)
+   ========================================== */
+
+.ts-heading-xs {
+  font-family:     var(--font-family-base);
+  font-size:       var(--font-size-04);       /* 20px */
+  font-weight:     var(--font-weight-semibold);
+  line-height:     var(--line-height-tight);
+  letter-spacing:  0;
+}
+
+.ts-heading-sm {
+  font-family:     var(--font-family-base);
+  font-size:       var(--font-size-05);       /* 24px */
+  font-weight:     var(--font-weight-semibold);
+  line-height:     var(--line-height-tight);
+  letter-spacing:  0;
+}
+
+.ts-heading-md {
+  font-family:     var(--font-family-base);
+  font-size:       var(--font-size-06);       /* 32px */
+  font-weight:     var(--font-weight-bold);
+  line-height:     var(--line-height-tight);
+  letter-spacing:  -0.01em;
+}
+
+.ts-heading-lg {
+  font-family:     var(--font-family-base);
+  font-size:       var(--font-size-07);       /* 40px */
+  font-weight:     var(--font-weight-bold);
+  line-height:     var(--line-height-tight);
+  letter-spacing:  -0.02em;
+}
+
+.ts-heading-xl {
+  font-family:     var(--font-family-base);
+  font-size:       var(--font-size-08);       /* 48px */
+  font-weight:     var(--font-weight-bold);
+  line-height:     var(--line-height-tight);
+  letter-spacing:  -0.02em;
+}
+
+/* ==========================================
+   DISPLAY (lh: 1.2)
+   ========================================== */
+
+.ts-display-sm {
+  font-family:     var(--font-family-base);
+  font-size:       var(--font-size-09);       /* 64px */
+  font-weight:     var(--font-weight-bold);
+  line-height:     var(--line-height-tight);
+  letter-spacing:  -0.03em;
+}
+
+.ts-display {
+  font-family:     var(--font-family-base);
+  font-size:       var(--font-size-10);       /* 72px */
+  font-weight:     var(--font-weight-bold);
+  line-height:     var(--line-height-tight);
+  letter-spacing:  -0.03em;
+}
+
+/* ==========================================
+   CODE (lh: 1.5)
+   ========================================== */
+
+.ts-code {
+  font-family:     var(--font-family-mono);
+  font-size:       var(--font-size-02);       /* 14px */
+  font-weight:     var(--font-weight-regular);
+  line-height:     var(--line-height-base);
+  letter-spacing:  0;
+}
+
+.ts-code-sm {
+  font-family:     var(--font-family-mono);
+  font-size:       var(--font-size-01);       /* 12px */
+  font-weight:     var(--font-weight-regular);
+  line-height:     var(--line-height-base);
+  letter-spacing:  0;
+}

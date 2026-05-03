@@ -1,4 +1,5 @@
 import "../src/tokens/tokens.css";
+import "../src/tokens/text-styles.css";
 
 /** @type { import('@storybook/react').Preview } */
 const preview = {
