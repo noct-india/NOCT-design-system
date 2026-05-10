@@ -4,8 +4,9 @@
   display:         inline-flex;
   align-items:     center;
   justify-content: center;
-  font-family:     var(--font-family-base);
-  font-weight:     var(--font-weight-regular);
+  font-family:     var(--font-family-body);
+  font-size:       var(--font-size-body);
+  font-weight:     var(--font-weight-body);
   line-height:     1;
   letter-spacing:  0;
   border:          var(--stroke-border) solid transparent;
@@ -24,24 +25,21 @@
 /* --- SIZES --- */
 
 .btn--sm {
-  font-size:     var(--font-size-03);
-  padding:       var(--space-150) var(--space-300);
-  border-radius: var(--radius-100);
+  padding:       var(--space-200) var(--space-300);  /* 8px 12px — Figma Button/Size Small */
+  border-radius: var(--radius-200);
 }
 
 .btn--md {
-  font-size:     var(--font-size-03);
-  padding:       var(--space-200) var(--space-400);
+  padding:       var(--space-300) var(--space-400);  /* 12px 16px — Figma Button/Size Medium */
   border-radius: var(--radius-200);
 }
 
 .btn--lg {
-  font-size:     var(--font-size-03);
-  padding:       var(--space-300) var(--space-600);
+  padding:       var(--space-400) var(--space-600);  /* 16px 24px — Button/Size Large */
   border-radius: var(--radius-200);
 }
 
-/* --- VARIANTS --- */
+/* --- VARIANTS — aligned to Figma: Primary / Neutral / Subtle --- */
 
 /* Primary — brand fill */
 .btn--primary {
@@ -49,26 +47,25 @@
   color:      var(--color-text-on-brand);
 }
 .btn--primary:hover:not(:disabled) {
-  background: var(--color-bg-brand-secondary);
+  background: var(--color-bg-brand-hover);
 }
 
-/* Secondary — brand outline */
-.btn--secondary {
+/* Neutral — outlined with brand border */
+.btn--neutral {
   background:   transparent;
   color:        var(--color-text-brand);
   border-color: var(--color-border-brand);
 }
-.btn--secondary:hover:not(:disabled) {
-  background: var(--color-bg-brand-tertiary);
-  color:      var(--color-text-on-brand);
+.btn--neutral:hover:not(:disabled) {
+  background: var(--color-bg-secondary);
 }
 
-/* Ghost */
-.btn--ghost {
+/* Subtle — no border, muted text */
+.btn--subtle {
   background: transparent;
   color:      var(--color-text-secondary);
 }
-.btn--ghost:hover:not(:disabled) {
+.btn--subtle:hover:not(:disabled) {
   background: var(--color-bg-secondary);
 }
 
@@ -78,7 +75,7 @@
   color:      var(--color-text-on-danger);
 }
 .btn--danger:hover:not(:disabled) {
-  background: var(--color-red-600);
+  background: var(--color-bg-danger-hover);
 }
 
 /* Positive / Success */
@@ -87,7 +84,7 @@
   color:      var(--color-text-on-positive);
 }
 .btn--success:hover:not(:disabled) {
-  background: var(--color-green-600);
+  background: var(--color-bg-positive-hover);
 }
 
 /* Warning */
@@ -96,6 +93,6 @@
   color:      var(--color-text-on-warning);
 }
 .btn--warning:hover:not(:disabled) {
-  background: var(--color-yellow-600);
-  color:      var(--color-white-1000);
+  background: var(--color-bg-warning-hover);
+  color:      var(--color-text-on-warning);
 }

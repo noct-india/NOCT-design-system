@@ -1,4 +1,4 @@
-.tabs { font-family: var(--font-family-base); width: 100%; }
+.tabs { font-family: var(--font-family-body); width: 100%; }
 
 .tabs__list {
   display:       flex;
@@ -11,29 +11,30 @@
   display:       inline-flex;
   align-items:   center;
   gap:           var(--space-200);
-  padding:       var(--space-300) var(--space-400);
-  font-family:   var(--font-family-base);
-  font-size:     var(--font-size-02);
-  font-weight:   var(--font-weight-medium);
+  padding:       var(--space-100) var(--space-300);    /* Space/100 vertical × Space/300 horizontal — Figma Tab */
+  font-family:   var(--font-family-body);
+  font-size:     var(--font-size-body);                /* 16px — Figma Tab/Font Size */
+  font-weight:   var(--font-weight-body);
   color:         var(--color-text-secondary);
   background:    none;
   border:        none;
   border-bottom: 2px solid transparent;
+  border-radius: var(--radius-100) var(--radius-100) 0 0;  /* Radius/100 top — Figma Tab */
   margin-bottom: -1px;
   cursor:        pointer;
   white-space:   nowrap;
-  transition:    color var(--transition-fast), border-color var(--transition-fast);
+  transition:    color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
 }
 
 .tabs__tab:hover:not(:disabled) {
-  color: var(--color-text-default);
+  color:      var(--color-text-default);
   background: var(--color-bg-secondary);
-  border-radius: var(--radius-100) var(--radius-100) 0 0;
 }
 
+/* Active — Neutral tokens per Figma (not Brand) */
 .tabs__tab--active {
-  color:        var(--color-text-brand);
-  border-color: var(--color-border-brand);
+  color:        var(--color-text-default);
+  border-color: var(--color-border-default);
   font-weight:  var(--font-weight-semibold);
 }
 
@@ -57,13 +58,13 @@
 }
 
 .tabs__tab--active .tabs__count {
-  background: var(--color-bg-brand-tertiary);
-  color:      var(--color-text-brand);
+  background: var(--color-bg-neutral-secondary);
+  color:      var(--color-text-default);
 }
 
 .tabs__panel {
   padding:     var(--space-600) 0;
   color:       var(--color-text-secondary);
-  font-size:   var(--font-size-02);
+  font-size:   var(--font-size-body);
   line-height: var(--line-height-base);
 }

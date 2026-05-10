@@ -2,14 +2,14 @@
   display:         inline-flex;
   align-items:     center;
   gap:             var(--space-100);
-  padding:         var(--space-100) var(--space-300);
-  font-family:     var(--font-family-base);
-  font-size:       var(--font-size-01);
-  font-weight:     var(--font-weight-medium);
-  border-radius:   var(--radius-full);
+  padding:         var(--space-100) var(--space-200);   /* Space/100 × Space/200 — Figma Tag */
+  font-family:     var(--font-family-body);
+  font-size:       var(--font-size-body);               /* 16px — Figma Tag/Font Size */
+  font-weight:     var(--font-weight-body);
+  border-radius:   var(--radius-200);                   /* 8px — Figma Radius/200 (not radius-full) */
   border:          var(--stroke-border) solid transparent;
   white-space:     nowrap;
-  line-height:     var(--line-height-tight);
+  line-height:     1;
   user-select:     none;
 }
 
@@ -34,16 +34,28 @@
 .tag--warning.tag--secondary { background: var(--color-bg-warning-tertiary);   color: var(--color-text-warning);     border-color: var(--color-border-warning); }
 
 /* Neutral */
-.tag--neutral.tag--primary   { background: var(--color-bg-neutral);            color: var(--color-white-1000);       }
+.tag--neutral.tag--primary   { background: var(--color-bg-neutral);            color: var(--color-text-on-brand);    }
 .tag--neutral.tag--secondary { background: var(--color-bg-neutral-tertiary);   color: var(--color-text-default);     border-color: var(--color-border-default); }
 
 /* --- TOGGLE --- */
 .tag--toggle {
-  cursor:  pointer;
-  border:  var(--stroke-border) solid var(--color-border-default);
+  cursor: pointer;
+  border: var(--stroke-border) solid var(--color-border-brand);
 }
-.tag--toggle-on  { background: var(--color-bg-brand); color: var(--color-text-on-brand); border-color: var(--color-border-brand); }
-.tag--toggle-off { background: transparent;           color: var(--color-text-secondary); }
+
+/* On — Brand/Default bg, On Brand text */
+.tag--toggle-on {
+  background:   var(--color-bg-brand);
+  color:        var(--color-text-on-brand);
+  border-color: var(--color-border-brand);
+}
+
+/* Off — Brand/Tertiary bg, Brand/Tertiary text — Figma Tag Toggle/State=Off */
+.tag--toggle-off {
+  background:   var(--color-bg-brand-tertiary);
+  color:        var(--color-text-brand);
+  border-color: var(--color-border-brand);
+}
 
 /* --- REMOVE BUTTON --- */
 .tag__remove {
