@@ -27,7 +27,7 @@
   width:           16px;
   height:          16px;
   border-radius:   var(--radius-full);
-  border:          var(--stroke-border) solid var(--color-border-default);
+  border:          var(--stroke-border) solid var(--color-border-brand-tertiary);
   background:      var(--color-bg-default);
   display:         flex;
   align-items:     center;
@@ -40,12 +40,12 @@
   width:         8px;
   height:        8px;
   border-radius: var(--radius-full);
-  background:    var(--color-icon-on-brand);
+  background:    var(--color-icon-on-brand-tint);
 }
 
 /* Checked */
 .radio--checked .radio__control {
-  background:   var(--color-bg-brand);
+  background:   var(--color-bg-brand-tint);
   border-color: var(--color-border-brand);
 }
 

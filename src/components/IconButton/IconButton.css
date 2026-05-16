@@ -51,12 +51,12 @@
 
 /* Neutral */
 .icon-btn--neutral {
-  background:   var(--color-bg-default);
+  background:   var(--color-bg-neutral-tertiary);
   border-color: var(--color-border-default);
   color:        var(--color-icon-default);
 }
 .icon-btn--neutral:hover:not(:disabled) {
-  background:   var(--color-bg-neutral-tertiary);
+  background:   var(--color-bg-neutral-secondary);
   border-color: var(--color-border-secondary);
 }
 

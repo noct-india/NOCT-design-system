@@ -15,13 +15,13 @@
 }
 
 .slider-field__label {
-  font-size: var(--font-size-body);
+  font-size: var(--font-size-body-small);
   color:     var(--color-text-default);
 }
 
 .slider-field__value {
-  font-size:   var(--font-size-body);
-  font-weight: var(--font-weight-semibold);
+  font-size:   var(--font-size-body-small);
+  font-weight: var(--font-weight-regular);
   color:       var(--color-text-default);
   text-align:  right;
 }
@@ -41,7 +41,7 @@
   right:         0;
   height:        8px;
   border-radius: var(--radius-full);
-  background:    var(--color-bg-neutral-secondary);
+  background:    var(--color-bg-brand-tint);
   overflow:      hidden;
   pointer-events: none;
 }

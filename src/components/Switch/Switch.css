@@ -29,7 +29,7 @@
   width:          40px;
   height:         24px;
   border-radius:  var(--radius-full);
-  border:         var(--stroke-border) solid var(--color-border-default);
+  border:         var(--stroke-border) solid var(--color-border-brand-tertiary);
   background:     var(--color-bg-default);
   position:       relative;
   transition:     background var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
@@ -44,7 +44,7 @@
   width:          18px;
   height:         18px;
   border-radius:  var(--radius-full);
-  background:     var(--color-border-default);
+  background:     var(--color-icon-brand-tertiary);
   transition:     left var(--transition-fast), background var(--transition-fast);
   box-shadow:     0 1px 3px rgba(0, 0, 0, 0.2);
 }

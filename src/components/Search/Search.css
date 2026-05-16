@@ -1,60 +1,62 @@
 /* Search — NOCT Design System tokens (pill-shaped: Radius/Full) */
 
+/* Wrapper acts as the styled "input" — border, bg, focus ring all live here */
 .search-field {
-  position:    relative;
-  display:     flex;
-  align-items: center;
-  width:       100%;
-  font-family: var(--font-family-body);
-}
-
-.search-field__input {
-  width:         100%;
-  font-family:   var(--font-family-body);
-  font-size:     var(--font-size-body);
-  color:         var(--color-text-default);
+  display:       flex;
+  align-items:   center;
+  gap:           var(--space-200);          /* Space/200 = 8px between text and icon */
+  padding:       var(--space-300) var(--space-400); /* Space/300 T/B, Space/400 L/R */
   background:    var(--color-bg-default);
   border:        var(--stroke-border) solid var(--color-border-default);
   border-radius: var(--radius-full);
-  padding:       var(--space-300) var(--space-400);
-  padding-left:  calc(var(--space-400) + 20px); /* room for search icon */
-  outline:       none;
-  transition:    border-color var(--transition-fast), box-shadow var(--transition-fast);
+  width:         100%;
   box-sizing:    border-box;
-
-  /* Remove native search clear button */
-  -webkit-appearance: none;
+  font-family:   var(--font-family-body);
+  transition:    border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
-.search-field__input::-webkit-search-cancel-button { display: none; }
 
-.search-field__input::placeholder { color: var(--color-text-tertiary); }
+.search-field:hover:not(.search-field--disabled) {
+  border-color: var(--color-border-secondary);
+}
 
-.search-field__input:hover:not(:disabled) { border-color: var(--color-border-secondary); }
-
-.search-field__input:focus {
+.search-field:focus-within:not(.search-field--disabled) {
   border-color: var(--color-border-brand);
   box-shadow:   0 0 0 var(--stroke-focus-ring) var(--color-bg-brand-tertiary);
 }
 
-/* Search icon (left) */
-.search-field__icon-left {
-  position:       absolute;
-  left:           var(--space-400);
-  pointer-events: none;
-  color:          var(--color-icon-tertiary);
-  display:        flex;
-  align-items:    center;
+/* The actual <input> — no own border/bg, fills available space */
+.search-field__input {
+  flex:        1;
+  min-width:   0;
+  border:      none;
+  outline:     none;
+  background:  transparent;
+  font-family: var(--font-family-body);
+  font-size:   var(--font-size-body);
+  color:       var(--color-text-default);
+  padding:     0;
+
+  /* Remove native search chrome */
+  -webkit-appearance: none;
+}
+.search-field__input::-webkit-search-cancel-button { display: none; }
+.search-field__input::placeholder                  { color: var(--color-text-tertiary); }
+
+/* Right-side search icon (shown when empty) */
+.search-field__icon-right {
+  flex-shrink:     0;
+  width:           16px;
+  height:          16px;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  pointer-events:  none;
+  color:           var(--color-icon-default);
 }
 
-/* Filled: search icon turns default colour */
-.search-field--filled .search-field__icon-left {
-  color: var(--color-icon-default);
-}
-
-/* Clear button (right) */
+/* Clear button (X icon, shown when filled and not disabled) */
 .search-field__clear {
-  position:        absolute;
-  right:           var(--space-300);
+  flex-shrink:     0;
   display:         flex;
   align-items:     center;
   justify-content: center;
@@ -64,20 +66,25 @@
   border:          none;
   background:      transparent;
   cursor:          pointer;
-  color:           var(--color-icon-secondary);
+  color:           var(--color-icon-default);
+  padding:         0;
+  /* nudge so the 24px touch target doesn't add visual gap */
+  margin:          calc(-1 * var(--space-100));
   transition:      background var(--transition-fast);
 }
 .search-field__clear:hover {
   background: var(--color-bg-neutral-tertiary);
-  color:      var(--color-icon-default);
 }
 
-/* Disabled */
-.search-field--disabled .search-field__input {
+/* Disabled state */
+.search-field--disabled {
   background: var(--color-bg-disabled);
-  color:      var(--color-text-disabled);
   cursor:     not-allowed;
 }
-.search-field--disabled .search-field__icon-left {
+.search-field--disabled .search-field__input {
+  color:  var(--color-text-disabled);
+  cursor: not-allowed;
+}
+.search-field--disabled .search-field__icon-right {
   color: var(--color-icon-disabled);
 }
