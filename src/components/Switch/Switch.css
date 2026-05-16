@@ -1,0 +1,96 @@
+/* Switch — NOCT Design System tokens */
+
+.switch {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  gap:             var(--space-300);
+  cursor:          pointer;
+  font-family:     var(--font-family-body);
+  user-select:     none;
+  width:           fit-content;
+}
+
+/* Hide native input visually */
+.switch__input {
+  position: absolute;
+  width:    1px;
+  height:   1px;
+  padding:  0;
+  margin:   -1px;
+  overflow: hidden;
+  clip:     rect(0, 0, 0, 0);
+  border:   0;
+}
+
+/* Track */
+.switch__track {
+  flex-shrink:    0;
+  width:          40px;
+  height:         24px;
+  border-radius:  var(--radius-full);
+  border:         var(--stroke-border) solid var(--color-border-default);
+  background:     var(--color-bg-default);
+  position:       relative;
+  transition:     background var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  display:        flex;
+  align-items:    center;
+}
+
+/* Knob */
+.switch__knob {
+  position:       absolute;
+  left:           3px;
+  width:          18px;
+  height:         18px;
+  border-radius:  var(--radius-full);
+  background:     var(--color-border-default);
+  transition:     left var(--transition-fast), background var(--transition-fast);
+  box-shadow:     0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* ON state */
+.switch--on .switch__track {
+  background:   var(--color-bg-brand);
+  border-color: var(--color-bg-brand);
+}
+.switch--on .switch__knob {
+  left:       19px;
+  background: var(--color-icon-on-brand);
+}
+
+/* Hover */
+.switch:not(.switch--disabled):hover .switch__track {
+  border-color: var(--color-border-secondary);
+}
+.switch--on:not(.switch--disabled):hover .switch__track {
+  background:   var(--color-bg-brand-hover);
+  border-color: var(--color-bg-brand-hover);
+}
+
+/* Focus ring */
+.switch__input:focus-visible ~ .switch__track,
+.switch:focus-within .switch__track {
+  box-shadow: 0 0 0 var(--stroke-focus-ring) var(--color-bg-brand-tertiary);
+}
+
+/* Disabled */
+.switch--disabled {
+  cursor: not-allowed;
+}
+.switch--disabled .switch__track {
+  background:   var(--color-bg-disabled);
+  border-color: var(--color-border-disabled);
+}
+.switch--disabled .switch__knob {
+  background: var(--color-icon-disabled);
+}
+
+/* Label */
+.switch__label {
+  font-size: var(--font-size-body);
+  color:     var(--color-text-default);
+}
+.switch--disabled .switch__label {
+  color: var(--color-text-disabled);
+}

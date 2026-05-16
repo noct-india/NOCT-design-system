@@ -1,0 +1,119 @@
+/* Slider — NOCT Design System tokens */
+
+.slider-field {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-300);
+  font-family:    var(--font-family-body);
+  width:          100%;
+}
+
+.slider-field__header {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+}
+
+.slider-field__label {
+  font-size: var(--font-size-body);
+  color:     var(--color-text-default);
+}
+
+.slider-field__value {
+  font-size:   var(--font-size-body);
+  font-weight: var(--font-weight-semibold);
+  color:       var(--color-text-default);
+  text-align:  right;
+}
+
+/* Track wrapper — needed to overlay range on top of custom track */
+.slider-field__track-wrapper {
+  position: relative;
+  height:   16px;
+  display:  flex;
+  align-items: center;
+}
+
+/* Custom visual track */
+.slider-field__track {
+  position:      absolute;
+  left:          0;
+  right:         0;
+  height:        8px;
+  border-radius: var(--radius-full);
+  background:    var(--color-bg-neutral-secondary);
+  overflow:      hidden;
+  pointer-events: none;
+}
+
+/* Filled portion of track */
+.slider-field__fill {
+  height:        100%;
+  border-radius: var(--radius-full);
+  background:    var(--color-bg-brand);
+  transition:    width var(--transition-fast);
+}
+
+/* Range input — overlays track, transparent */
+.slider-field__input {
+  position:   relative;
+  width:      100%;
+  height:     16px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  cursor:     pointer;
+  outline:    none;
+  margin:     0;
+  padding:    0;
+}
+
+/* Thumb */
+.slider-field__input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width:         16px;
+  height:        16px;
+  border-radius: var(--radius-full);
+  background:    var(--color-bg-brand);
+  border:        2px solid var(--color-bg-default);
+  box-shadow:    0 1px 4px rgba(0, 0, 0, 0.25);
+  transition:    background var(--transition-fast), box-shadow var(--transition-fast);
+}
+.slider-field__input::-moz-range-thumb {
+  width:         16px;
+  height:        16px;
+  border-radius: var(--radius-full);
+  background:    var(--color-bg-brand);
+  border:        2px solid var(--color-bg-default);
+  box-shadow:    0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Focus */
+.slider-field__input:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 var(--stroke-focus-ring) var(--color-bg-brand-tertiary);
+}
+
+/* Hover */
+.slider-field__input:not(:disabled):hover::-webkit-slider-thumb {
+  background: var(--color-bg-brand-hover);
+}
+
+/* Remove default range track in browsers */
+.slider-field__input::-webkit-slider-runnable-track { background: transparent; }
+.slider-field__input::-moz-range-track             { background: transparent; }
+
+/* Disabled */
+.slider-field--disabled .slider-field__input {
+  cursor: not-allowed;
+}
+.slider-field--disabled .slider-field__fill {
+  background: var(--color-bg-disabled);
+}
+.slider-field--disabled .slider-field__input::-webkit-slider-thumb {
+  background:  var(--color-bg-disabled);
+  border-color: var(--color-border-disabled);
+}
+.slider-field--disabled .slider-field__label,
+.slider-field--disabled .slider-field__value {
+  color: var(--color-text-disabled);
+}

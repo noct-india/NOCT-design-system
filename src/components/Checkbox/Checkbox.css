@@ -1,0 +1,87 @@
+/* Checkbox — NOCT Design System tokens */
+
+.checkbox {
+  display:     inline-flex;
+  align-items: center;
+  gap:         var(--space-300);
+  cursor:      pointer;
+  font-family: var(--font-family-body);
+  user-select: none;
+}
+
+/* Hide native input visually but keep it accessible */
+.checkbox__input {
+  position: absolute;
+  width:    1px;
+  height:   1px;
+  padding:  0;
+  margin:   -1px;
+  overflow: hidden;
+  clip:     rect(0, 0, 0, 0);
+  border:   0;
+}
+
+/* Visual control box */
+.checkbox__control {
+  flex-shrink:    0;
+  width:          16px;
+  height:         16px;
+  border-radius:  var(--radius-100);
+  border:         var(--stroke-border) solid var(--color-border-default);
+  background:     var(--color-bg-default);
+  display:        flex;
+  align-items:    center;
+  justify-content: center;
+  transition:     background var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  color:          var(--color-icon-on-brand);
+}
+
+.checkbox__icon {
+  width:  10px;
+  height: 8px;
+  flex-shrink: 0;
+}
+
+/* Checked / Indeterminate */
+.checkbox--checked .checkbox__control {
+  background:   var(--color-bg-brand);
+  border-color: var(--color-border-brand);
+}
+
+/* Focus ring — applied via :focus-visible on the hidden input */
+.checkbox__input:focus-visible ~ .checkbox__control,
+.checkbox:focus-within .checkbox__control {
+  box-shadow: 0 0 0 var(--stroke-focus-ring) var(--color-bg-brand-tertiary);
+}
+
+/* Hover */
+.checkbox:not(.checkbox--disabled):hover .checkbox__control {
+  border-color: var(--color-border-secondary);
+}
+.checkbox--checked:not(.checkbox--disabled):hover .checkbox__control {
+  background:   var(--color-bg-brand-hover);
+  border-color: var(--color-bg-brand-hover);
+}
+
+/* Disabled */
+.checkbox--disabled {
+  cursor: not-allowed;
+}
+.checkbox--disabled .checkbox__control {
+  background:   var(--color-bg-disabled);
+  border-color: var(--color-border-disabled);
+  color:        var(--color-icon-disabled);
+}
+.checkbox--disabled.checkbox--checked .checkbox__control {
+  background:   var(--color-bg-disabled);
+  border-color: var(--color-border-disabled);
+}
+
+/* Label */
+.checkbox__label {
+  font-size:  var(--font-size-body);
+  color:      var(--color-text-default);
+}
+.checkbox--disabled .checkbox__label {
+  color: var(--color-text-disabled);
+}

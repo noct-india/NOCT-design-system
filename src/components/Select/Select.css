@@ -1,0 +1,92 @@
+/* Select — NOCT Design System tokens */
+
+.select-field {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-200);
+  font-family:    var(--font-family-body);
+  width:          100%;
+}
+
+.select-field__label {
+  font-size:   var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  color:       var(--color-text-default);
+}
+
+/* Wrapper positions the select + chevron */
+.select-field__wrapper {
+  position: relative;
+  width:    100%;
+}
+
+.select-field__select {
+  width:          100%;
+  appearance:     none;
+  -webkit-appearance: none;
+  font-family:    var(--font-family-body);
+  font-size:      var(--font-size-body);
+  font-weight:    var(--font-weight-regular);
+  color:          var(--color-text-default);
+  background:     var(--color-bg-default);
+  border:         var(--stroke-border) solid var(--color-border-default);
+  border-radius:  var(--radius-200);
+  padding:        var(--space-300) var(--space-300) var(--space-300) var(--space-400);
+  padding-right:  calc(var(--space-300) + 24px); /* room for chevron */
+  outline:        none;
+  cursor:         pointer;
+  transition:     border-color var(--transition-fast), box-shadow var(--transition-fast);
+  box-sizing:     border-box;
+}
+
+/* Placeholder (no selection) */
+.select-field__select--placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.select-field__select:hover:not(:disabled) {
+  border-color: var(--color-border-secondary);
+}
+
+.select-field__select:focus {
+  border-color: var(--color-border-brand);
+  box-shadow:   0 0 0 var(--stroke-focus-ring) var(--color-bg-brand-tertiary);
+}
+
+/* Chevron overlay */
+.select-field__chevron {
+  position:       absolute;
+  right:          var(--space-300);
+  top:            50%;
+  transform:      translateY(-50%);
+  pointer-events: none;
+  color:          var(--color-icon-default);
+  display:        flex;
+  align-items:    center;
+}
+
+/* Error state */
+.select-field--error .select-field__select {
+  border-color: var(--color-border-danger);
+}
+.select-field--error .select-field__select:focus {
+  box-shadow: 0 0 0 var(--stroke-focus-ring) var(--color-bg-danger-tertiary);
+}
+
+/* Disabled state */
+.select-field--disabled .select-field__select {
+  background:   var(--color-bg-disabled);
+  border-color: var(--color-border-disabled);
+  color:        var(--color-text-disabled);
+  cursor:       not-allowed;
+}
+.select-field--disabled .select-field__label {
+  color: var(--color-text-disabled);
+}
+.select-field--disabled .select-field__chevron {
+  color: var(--color-icon-disabled);
+}
+
+/* Hint / Error text */
+.select-field__hint        { margin: 0; font-size: var(--font-size-01); color: var(--color-text-secondary); }
+.select-field__hint--error { color: var(--color-text-danger); }

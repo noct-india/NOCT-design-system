@@ -1,4 +1,6 @@
-.input-field {
+/* Textarea — NOCT Design System tokens (mirrors Input) */
+
+.textarea-field {
   display:        flex;
   flex-direction: column;
   gap:            var(--space-100);
@@ -6,13 +8,13 @@
   width:          100%;
 }
 
-.input-field__label {
+.textarea-field__label {
   font-size:   var(--font-size-body);
   font-weight: var(--font-weight-semibold);
   color:       var(--color-text-default);
 }
 
-.input-field__input {
+.textarea-field__textarea {
   width:         100%;
   font-family:   var(--font-family-body);
   font-size:     var(--font-size-body);
@@ -23,36 +25,39 @@
   outline:       none;
   transition:    border-color var(--transition-fast), box-shadow var(--transition-fast);
   box-sizing:    border-box;
+  line-height:   1.5;
+  min-height:    80px;
 }
 
-.input-field__input::placeholder { color: var(--color-text-tertiary); }
+.textarea-field__textarea::placeholder { color: var(--color-text-tertiary); }
 
-.input-field__input:hover:not(:disabled) { border-color: var(--color-border-secondary); }
+.textarea-field__textarea:hover:not(:disabled) { border-color: var(--color-border-secondary); }
 
-.input-field__input:focus {
+.textarea-field__textarea:focus {
   border-color: var(--color-border-brand);
   box-shadow:   0 0 0 var(--stroke-focus-ring) var(--color-bg-brand-tertiary);
 }
 
-.input-field__input:disabled {
+.textarea-field__textarea:disabled {
   background: var(--color-bg-disabled);
   color:      var(--color-text-disabled);
   cursor:     not-allowed;
+  resize:     none;
 }
 
 /* Sizes */
-.input-field--small  .input-field__input { padding: var(--space-150) var(--space-300); font-size: var(--font-size-01); }
-.input-field--medium .input-field__input { padding: var(--space-200) var(--space-400); }
-.input-field--large  .input-field__input { padding: var(--space-300) var(--space-400); }
+.textarea-field--small  .textarea-field__textarea { padding: var(--space-150) var(--space-300); font-size: var(--font-size-01); }
+.textarea-field--medium .textarea-field__textarea { padding: var(--space-200) var(--space-400); }
+.textarea-field--large  .textarea-field__textarea { padding: var(--space-300) var(--space-400); }
 
 /* Error state */
-.input-field--error .input-field__input {
+.textarea-field--error .textarea-field__textarea {
   border-color: var(--color-border-danger);
 }
-.input-field--error .input-field__input:focus {
+.textarea-field--error .textarea-field__textarea:focus {
   box-shadow: 0 0 0 var(--stroke-focus-ring) var(--color-bg-danger-tertiary);
 }
 
 /* Helper / Error hint */
-.input-field__hint        { margin: 0; font-size: var(--font-size-01); color: var(--color-text-secondary); }
-.input-field__hint--error { color: var(--color-text-danger); }
+.textarea-field__hint        { margin: 0; font-size: var(--font-size-01); color: var(--color-text-secondary); }
+.textarea-field__hint--error { color: var(--color-text-danger); }

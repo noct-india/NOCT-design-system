@@ -1,0 +1,86 @@
+/* IconButton — NOCT Design System tokens */
+
+.icon-btn {
+  display:          inline-flex;
+  align-items:      center;
+  justify-content:  center;
+  flex-shrink:      0;
+  border-radius:    var(--radius-200);
+  border:           var(--stroke-border) solid transparent;
+  cursor:           pointer;
+  transition:       background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
+  font-family:      var(--font-family-body);
+  box-sizing:       border-box;
+}
+
+.icon-btn__icon {
+  display:     flex;
+  align-items: center;
+}
+
+/* Focus ring */
+.icon-btn:focus-visible {
+  outline:    none;
+  box-shadow: 0 0 0 var(--stroke-focus-ring) var(--color-bg-brand-tertiary);
+}
+
+/* ── Sizes ────────────────────────── */
+.icon-btn--md {
+  width:   44px;
+  height:  44px;
+  padding: var(--space-300);
+}
+.icon-btn--sm {
+  width:   36px;
+  height:  36px;
+  padding: var(--space-200);
+}
+
+/* ── Variants ─────────────────────── */
+
+/* Primary */
+.icon-btn--primary {
+  background:   var(--color-bg-brand);
+  border-color: var(--color-border-brand);
+  color:        var(--color-icon-on-brand);
+}
+.icon-btn--primary:hover:not(:disabled) {
+  background:   var(--color-bg-brand-hover);
+  border-color: var(--color-bg-brand-hover);
+}
+
+/* Neutral */
+.icon-btn--neutral {
+  background:   var(--color-bg-default);
+  border-color: var(--color-border-default);
+  color:        var(--color-icon-default);
+}
+.icon-btn--neutral:hover:not(:disabled) {
+  background:   var(--color-bg-neutral-tertiary);
+  border-color: var(--color-border-secondary);
+}
+
+/* Subtle */
+.icon-btn--subtle {
+  background:   transparent;
+  border-color: transparent;
+  color:        var(--color-icon-default);
+}
+.icon-btn--subtle:hover:not(:disabled) {
+  background:   var(--color-bg-neutral-tertiary);
+}
+
+/* ── Disabled ─────────────────────── */
+.icon-btn--disabled,
+.icon-btn:disabled {
+  background:   var(--color-bg-disabled);
+  border-color: var(--color-border-disabled);
+  color:        var(--color-icon-disabled);
+  cursor:       not-allowed;
+  pointer-events: none;
+}
+.icon-btn--subtle.icon-btn--disabled,
+.icon-btn--subtle:disabled {
+  background:   transparent;
+  border-color: transparent;
+}

@@ -1,0 +1,86 @@
+/* Radio — NOCT Design System tokens */
+
+.radio {
+  display:     inline-flex;
+  align-items: center;
+  gap:         var(--space-300);
+  cursor:      pointer;
+  font-family: var(--font-family-body);
+  user-select: none;
+}
+
+/* Hide native input visually */
+.radio__input {
+  position: absolute;
+  width:    1px;
+  height:   1px;
+  padding:  0;
+  margin:   -1px;
+  overflow: hidden;
+  clip:     rect(0, 0, 0, 0);
+  border:   0;
+}
+
+/* Visual control circle */
+.radio__control {
+  flex-shrink:     0;
+  width:           16px;
+  height:          16px;
+  border-radius:   var(--radius-full);
+  border:          var(--stroke-border) solid var(--color-border-default);
+  background:      var(--color-bg-default);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  transition:      background var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+/* Inner dot */
+.radio__dot {
+  width:         8px;
+  height:        8px;
+  border-radius: var(--radius-full);
+  background:    var(--color-icon-on-brand);
+}
+
+/* Checked */
+.radio--checked .radio__control {
+  background:   var(--color-bg-brand);
+  border-color: var(--color-border-brand);
+}
+
+/* Focus ring */
+.radio__input:focus-visible ~ .radio__control,
+.radio:focus-within .radio__control {
+  box-shadow: 0 0 0 var(--stroke-focus-ring) var(--color-bg-brand-tertiary);
+}
+
+/* Hover */
+.radio:not(.radio--disabled):hover .radio__control {
+  border-color: var(--color-border-secondary);
+}
+.radio--checked:not(.radio--disabled):hover .radio__control {
+  background:   var(--color-bg-brand-hover);
+  border-color: var(--color-bg-brand-hover);
+}
+
+/* Disabled */
+.radio--disabled {
+  cursor: not-allowed;
+}
+.radio--disabled .radio__control {
+  background:   var(--color-bg-disabled);
+  border-color: var(--color-border-disabled);
+}
+.radio--disabled .radio__dot {
+  background: var(--color-icon-disabled);
+}
+
+/* Label */
+.radio__label {
+  font-size: var(--font-size-body);
+  color:     var(--color-text-default);
+}
+.radio--disabled .radio__label {
+  color: var(--color-text-disabled);
+}

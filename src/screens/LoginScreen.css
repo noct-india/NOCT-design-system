@@ -1,0 +1,89 @@
+/* LoginScreen — uses only NOCT design system tokens */
+
+.login-screen {
+  min-height:      100vh;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  background:      var(--color-bg-default);
+  padding:         var(--space-400);
+  font-family:     var(--font-family-body);
+  box-sizing:      border-box;
+}
+
+.login-screen__card {
+  width:          100%;
+  max-width:      400px;
+  background:     var(--color-bg-default);
+  border:         var(--stroke-border) solid var(--color-border-default);
+  border-radius:  var(--radius-400);
+  padding:        var(--space-800);
+  box-shadow:     0 var(--depth-100) var(--depth-400) var(--color-black-200);
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-600);
+  box-sizing:     border-box;
+}
+
+/* --- Header --- */
+
+.login-screen__header {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-100);
+}
+
+.login-screen__brand {
+  color:          var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.login-screen__title {
+  margin: 0;
+  color:  var(--color-text-default);
+}
+
+.login-screen__subtitle {
+  margin: 0;
+  color:  var(--color-text-secondary);
+}
+
+/* --- Form --- */
+
+.login-screen__form {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-400);
+}
+
+/* --- Actions --- */
+
+.login-screen__actions {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-200);
+  padding-top:    var(--space-200);
+}
+
+/* Stretch buttons to full width inside actions */
+.login-screen__actions .btn {
+  width:            100%;
+  justify-content:  center;
+}
+
+/* --- Responsive: mobile (matches Figma Responsive/Mobile breakpoint) --- */
+
+@media (max-width: 767px) {
+  .login-screen {
+    align-items: flex-start;
+    padding:     var(--space-600) var(--space-400);
+  }
+
+  .login-screen__card {
+    max-width:     100%;
+    padding:       var(--space-600);
+    border:        none;
+    box-shadow:    none;
+  }
+}
